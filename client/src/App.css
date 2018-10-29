@@ -1,0 +1,33 @@
+
+.something {
+  background-color: lightblue;
+} 
+body {
+  margin: 5%;
+
+}
+#info {
+  text-align: center;
+}
+#login {
+  float: right;
+}
+#numberSelected {
+  float: left;
+}
+#scrapeNJ, #scrapeNY {
+  float: right;
+}
+#selectedShown {
+  text-align: left;
+}
+
+#num {
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  padding: 5px;
+  -webkit-boxshadow: 1px, 2px, 3px rgba(0,0,0,.5);
+  box-shadow: 0px, 2px, 2px rgba(34,34,34,0.6);
+}
