@@ -34,4 +34,14 @@ module.exports = function(app, passport, User) {
         function(req, res) {
             res.redirect("http://localhost:3000/")
         });
-}
+    app.get("*", (link, target, callback) => {
+        axios.get(link).then( response => {
+            var $ = cheerio.load(response.data);
+            var data = "test";
+            $(target).each( (i, element)=> {
+                console.log(element);
+            });
+            callback(data);
+        });
+    })
+};

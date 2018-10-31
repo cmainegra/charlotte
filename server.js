@@ -6,8 +6,7 @@ const expressSession = require("express-session");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const Example = require("./exampleModel.js");
-const passportGoogleAuth = require("passport-google-oauth20");
+const passport = require("passport-google-oauth20");
 const GoogleStrategy = require("passport-google-oauth20").Stategy;
 const User = require("./models/user.js");
 
