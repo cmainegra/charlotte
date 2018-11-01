@@ -33,10 +33,7 @@
     "passport-google-oauth20": "^1.0.0",
     "passport-oauth2": "^1.4.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cmainegra/charlotte.git"
-  },
+  "repository": "git+https://github.com/cmainegra/charlotte.git",
   "bugs": {
     "url": "https://github.com/cmainegra/charlotte/issues"
   },
