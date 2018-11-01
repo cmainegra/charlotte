@@ -5,20 +5,19 @@ const bodyParser = require("body-parser");
 const expressSession = require("express-session");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const mongoose = require("mongoose");
-const passportGoogleAuth20 = require("passport-google-oauth20");
-const GoogleStrategy = require("passport-google-oauth20").Stategy;
-const User = require("./models/user.js");
-const numbers = require('./models/numbers.js')
+// const mongoose = require("mongoose");
+// const passportGoogleAuth20 = require("passport-google-oauth20");
+// const GoogleStrategy = require("passport-google-oauth20").Stategy;
+// const User = require("./models/user.js");
+// const numbers = require('./models/numbers.js')
 
+// if(typeof process.env.MONGODB_URI !== 'undefined' && process.env.MONGODB_URI > 0){
+//     mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
+// }
+// else{
+//     mongoose.connect("mongodb://localhost/charlotte", { useNewUrlParser: true});
+// }
 
-if(typeof process.env.MONGODB_URI !== 'undefined' && process.env.MONGODB_URI > 0){
-    mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
-}
-else{
-    mongoose.connect("mongodb://localhost/charlotte", { useNewUrlParser: true});
-}
-// app.use()
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -102,5 +101,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`server listenting on ${PORT}!`);
+    console.log(`Server now on port ${PORT}!`);
 });
