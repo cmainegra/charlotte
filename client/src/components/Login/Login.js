@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import { Button } from 'react-bootstrap';
 
 class Login extends Component {
     handleSubmit = event => {
@@ -22,10 +23,11 @@ class Login extends Component {
             <form onSubmit={this.handleSubmit}>
               <label htmlFor="email">Email</label>
               <input type="email" name="email" />
+              <Button bsStyle="primary" type="submit">Sign In</Button>
               <br />
               <label htmlFor="password">Password</label>
               <input type="password" name="password" />
-              <button type="submit">Register</button>
+              <Button bsStyle="primary" type="submit">Register</Button>
             </form>
           </div>
         );

@@ -6,11 +6,23 @@ body {
   margin: 5%;
 
 }
+
+.sign-up-wrapper {
+border: 1px;
+float: right;
+font-size: 9px;
+text-align: right;
+}
+
+.about {
+  font-size: 12px;
+  
+}
 #info {
   text-align: center;
 }
 #login {
-  float: right;
+  text-align: right;
 }
 #numberSelected {
   float: left;
@@ -20,12 +32,15 @@ body {
 }
 #selectedShown {
   text-align: left;
+  border: 1px;
+  border-color: black;
 }
 
 #num {
-  font-size: 30px;
-  width: 50px;
-  height: 50px;
+  font-size: 24px;
+  box-flex-group: 2; 
+  width: 30px;
+  height: 30px;
   margin: 10px;
   padding: 5px;
   -webkit-boxshadow: 1px, 2px, 3px rgba(0,0,0,.5);

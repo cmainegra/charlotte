@@ -12,6 +12,8 @@ var UserSchema = new Schema ({
         type: String
     }
 });
+
+export default UserSchema;
 // var numberSchema = new Schema ({
 //     numbers: {
 //         type: Array

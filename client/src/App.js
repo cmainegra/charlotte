@@ -4,8 +4,8 @@ import './App.css';
 import Info from "./components/Info";
 import Login from "./components/Login";
 import NumberSelector from "./components/NumberSelector";
-import ScrapeNJ from "./components/ScrapeNJ";
-import ScrapeNY from "./components/ScrapeNY";
+// import ScrapeNJ from "./components/ScrapeNJ";
+// import ScrapeNY from "./components/ScrapeNY";
 import SelectedShown from "./components/SelectedShown";
 
 class App extends Component {
@@ -14,9 +14,7 @@ class App extends Component {
       <div>
         <Login/>
         <Info/>
-        <NumberSelector/>
-        <ScrapeNJ/>
-        <ScrapeNY/>
+        <NumberSelector test="hello"/>
         <SelectedShown/>
       </div>
     )
