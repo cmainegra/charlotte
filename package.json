@@ -12,7 +12,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
+  "author": "charlie",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
@@ -29,5 +29,13 @@
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
     "passport-oauth2": "^1.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmainegra/charlotte.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cmainegra/charlotte/issues"
+  },
+  "homepage": "https://github.com/cmainegra/charlotte#readme"
 }
