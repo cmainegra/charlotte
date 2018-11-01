@@ -6,7 +6,7 @@ const expressSession = require("express-session");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const passport = require("passport-google-oauth20");
+const passportGoogleAuth20 = require("passport-google-oauth20");
 const GoogleStrategy = require("passport-google-oauth20").Stategy;
 const User = require("./models/user.js");
 
@@ -29,64 +29,67 @@ app.use(expressSession({
     saveUninitialized: true,
     secure: false
 }));
-app.use(passport.initialize());
-app.use(passpost.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-console.log(
-    {
-        functionName: "passport use inputs in server.js",
-        clientID: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: process.env.GOOGLE_CALLBACK
-    }
-);
+// console.log(
+//     {
+//         functionName: "passport use inputs in server.js",
+//         clientID: process.env.GOOGLE_CLIENT_ID,
+//         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+//         callbackURL: process.env.GOOGLE_CALLBACK
+//     }
+// );
 
-passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: process.env.GOOGLE_CALLBACK
-},
-function(accessToken, refreshToken, data, cb) {
-    var email = data.emails[0].value;
-    var profileId = data.id;
-    User.findOne({
-        profileId: profileId
-    })
-    .then( user => {
-        if(!user) {
-            User.create({
-                profileId: profileId,
-                email: email
-            }).then (user => {
-                return cb(null, user);
-            });
-        }
-        else{
-            return cb(null, user);
-        }
-    }).catch( err => {
-        console.log(err);
-        return cb(err, null);
-    })
-}
-));
+// passport.use(new GoogleStrategy({
+//     clientID: process.env.GOOGLE_CLIENT_ID,
+//     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+//     callbackURL: process.env.GOOGLE_CALLBACK
+// },
+// function(accessToken, refreshToken, data, cb) {
+//     var email = data.emails[0].value;
+//     var profileId = data.id;
+//     User.findOne({
+//         profileId: profileId
+//     })
+//     .then( user => {
+//         if(!user) {
+//             User.create({
+//                 profileId: profileId,
+//                 email: email,
+//                 password: password
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-}
+//             }).then (user => {
+//                 return cb(null, user);
+//             });
+//         }
+//         else{
+//             return cb(null, user);
+//         }
+//     }).catch( err => {
+//         console.log(err);
+//         return cb(err, null);
+//     })
+// }
+// ));
 
-app.get("/testdb", (req, res) => {
-    User.create({
-        profileId: "1",
-        email: "test@test"
-    }).then( data => {
-        console.log(data);
-        res.json(data);
-    });
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static("client/build"));
+// }
 
-});
+// app.get("/testdb", (req, res) => {
+//     User.create({
+//         profileId: "1",
+//         email: "test@test",
+//         password: "test"
+//     }).then( data => {
+//         console.log(data);
+//         res.json(data);
+//     });
 
-require('./routes/api-routes')(app, passport, User);
+// });
+
+// require('./routes/api-routes')(app, passport, User);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));

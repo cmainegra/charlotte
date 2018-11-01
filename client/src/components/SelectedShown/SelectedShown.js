@@ -4,7 +4,7 @@ import "./SelectedShown.css";
 class SelectedShown extends Component {
     render () {
         return (
-            <p id="selectedShown" class="something"> Selected Numbers</p>
+            <p id="selectedShown" className="something"> Selected Numbers</p>
         );
     }
 }

@@ -7,5 +7,15 @@ var UserSchema = new Schema ({
     },
     email: {
         type: String
+    },
+    password: {
+        type: String
     }
 });
+// var numberSchema = new Schema ({
+//     numbers: {
+//         type: Array
+//     }
+// })
+
+// export default UserSchema;
