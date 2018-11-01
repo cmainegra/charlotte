@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const passportGoogleAuth20 = require("passport-google-oauth20");
 const GoogleStrategy = require("passport-google-oauth20").Stategy;
 const User = require("./models/user.js");
+const numbers = require('./models/numbers.js')
 
 
 if(typeof process.env.MONGODB_URI !== 'undefined' && process.env.MONGODB_URI > 0){
@@ -17,7 +18,7 @@ if(typeof process.env.MONGODB_URI !== 'undefined' && process.env.MONGODB_URI > 0
 else{
     mongoose.connect("mongodb://localhost/charlotte", { useNewUrlParser: true});
 }
-
+// app.use()
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -29,6 +30,11 @@ app.use(expressSession({
     saveUninitialized: true,
     secure: false
 }));
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static("client/build"));
+};
+
 // app.use(passport.initialize());
 // app.use(passport.session());
 
